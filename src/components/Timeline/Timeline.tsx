@@ -155,7 +155,7 @@ const detailedTimelineEvents = [
   { 
     year: 2024, 
     event: '"Guntur Kaaram" - Latest release',
-    details: 'Directed by Trivikram Srinivas, marked their fourth collaboration',
+    details: 'Directed by Trivikram Srinivas, marked their third collaboration',
     category: 'Recent Work',
     significance: 'Continued successful partnership with acclaimed director'
   },
@@ -169,7 +169,7 @@ const detailedTimelineEvents = [
   { 
     year: 2027, 
     event: 'Upcoming "SSMB29" with SS Rajamouli',
-    details: 'Jungle adventure thriller scheduled for November 2025, adopting muscular physique',
+    details: 'A Globetrotting action thriller expected in 2027, adopting muscular physique',
     category: 'Future Projects',
     significance: 'Collaboration with India\'s most celebrated director'
   }

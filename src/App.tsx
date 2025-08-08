@@ -28,7 +28,7 @@ const App = () => {
     const interval = setInterval(() => {
       setImageIndex(prevIndex => {
         const nextIndex = prevIndex + 1;
-        return nextIndex > 7 ? 1 : nextIndex; // Reset to 1 when it reaches 8
+        return nextIndex > 18 ? 1 : nextIndex; // Reset to 1 when it reaches 8
       });
     }, 5000); // Change image every 5 seconds
 
