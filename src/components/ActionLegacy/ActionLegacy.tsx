@@ -15,7 +15,7 @@ const ActionLegacy = () => {
           transition={{ duration: 0.8 }}
         >
           <img 
-            src={`/src/assets/images/${actionLegacy.image}`} 
+            src={`/images/${actionLegacy.image}`} 
             alt={actionLegacy.film} 
             className="w-full lg:w-5/12 h-auto object-cover rounded-lg mb-6" 
           />

@@ -18,7 +18,7 @@ const CultClassics = () => {
             transition={{ duration: 0.7 }}
           >
             <img 
-              src={`/src/assets/images/${film.image}`} 
+              src={`/images/${film.image}`} 
               alt={film.film} 
               className="w-full h-46 object-cover rounded-lg mb-4" 
             />

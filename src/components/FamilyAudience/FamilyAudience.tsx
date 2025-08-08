@@ -52,7 +52,7 @@ const FamilyAudience = () => {
           <div className="relative z-10">
             <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
               <img 
-                src="/src/assets/images/athadu-poster.webp" 
+                src="/images/athadu-poster.webp" 
                 alt="Athadu Movie Poster" 
                 className="w-full lg:w-3/12 h-auto object-cover shadow-lg " 
               />

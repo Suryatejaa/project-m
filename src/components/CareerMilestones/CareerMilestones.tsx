@@ -35,7 +35,7 @@ const CareerMilestones = () => {
           {career.definingFilms.map((film, index) => (
             <SwiperSlide key={index} style={{ width: '300px', height: '450px' }}>
               <div className="relative w-full h-full rounded-lg overflow-hidden glassmorphism">
-                <img src={`/src/assets/images/${film.image}`} alt={film.film} className="w-full h-full object-cover" />
+                <img src={`/images/${film.image}`} alt={film.film} className="w-full h-full object-cover" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50">
                   <h3 className="text-2xl font-headers text-accent">{film.film}</h3>
                   <p className="text-lg text-light">{film.year}</p>

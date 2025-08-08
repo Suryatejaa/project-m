@@ -24,7 +24,7 @@ const EarlyLife = () => {
           variants={cardVariants}
           className="flex justify-center"
         >
-          <img src="/src/assets/images/young-mahesh.webp" alt="Young Mahesh Babu" className="rounded-lg shadow-lg w-full max-w-xs" />
+          <img src="/images/young-mahesh.webp" alt="Young Mahesh Babu" className="rounded-lg shadow-lg w-full max-w-xs" />
         </motion.div>
           <p className="font-body text-lg text-gray leading-relaxed">
             Born in <span className="font-bold text-secondary">{personalInfo.birthPlace}</span>, Mahesh Babu grew up in Chennai at his maternal grandmother's house. His father, the legendary actor <span className="font-bold text-accent">{family.father}</span>, was often busy with film shoots, so his elder brother, Ramesh Babu, took charge of his education.

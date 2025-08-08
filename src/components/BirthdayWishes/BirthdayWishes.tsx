@@ -66,7 +66,7 @@ const BirthdayWishes = () => {
             </p>
             <div className="border-t border-accent/30 pt-2">
             <img 
-                src="/src/assets/images/surya-img(1).webp" 
+                src="/images/surya-img(1).webp" 
                 alt="Birthday Tribute"
                 className="w-full h-auto rounded-lg"
               />

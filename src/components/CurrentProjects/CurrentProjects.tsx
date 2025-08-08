@@ -19,7 +19,7 @@ const CurrentProjects = () => {
             {/* Project Image */}
             <div className="relative">
               <img 
-                src="/src/assets/images/ssmb-29.webp" 
+                src="/images/ssmb-29.webp" 
                 alt={`${upcomingProject.title} movie poster`}
                 className="w-full max-w-sm mx-auto rounded-lg shadow-2xl"
               />

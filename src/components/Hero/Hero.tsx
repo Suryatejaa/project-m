@@ -13,14 +13,14 @@ const Hero = () => {
       {/* Desktop Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center hidden md:block" 
-        style={{backgroundImage: "url('/src/assets/images/hero-background.webp')"}}
+        style={{backgroundImage: "url('/images/hero-background.webp')"}}
       ></div>
 
       {/* Mobile Background */}
       <div 
         className="absolute inset-0 bg-cover bg-left md:hidden" 
         style={{
-          backgroundImage: "url('/src/assets/images/hero-background-mobile.webp')",
+          backgroundImage: "url('/images/hero-background-mobile.webp')",
           }}
       ></div>
 

@@ -18,7 +18,7 @@ const VideoTribute = () => {
           className="flex-shrink-0"
         >
           <ReelVideo 
-            videoSrc="/src/assets/videos/mahesh-reel.mp4"
+            videoSrc="/videos/mahesh-reel.mp4"
             title="Mahesh Babu Highlights"
           />
         </motion.div>

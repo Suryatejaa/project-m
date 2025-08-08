@@ -36,7 +36,7 @@ const App = () => {
   }, []); // Empty dependency array means this effect runs once on mount
 
   // Dynamically set background image based on imageIndex
-  const backgroundImage = `/src/assets/images/bg-${imageIndex}.webp`;
+  const backgroundImage = `/images/bg-${imageIndex}.webp`;
 
   return (
     <div 
@@ -51,7 +51,7 @@ const App = () => {
     >
       {/* Background Audio - Plays throughout the entire website */}
       <BackgroundAudio 
-        audioSrc="/src/assets/audio/mahesh-tribute.mp3"
+        audioSrc="/audio/mahesh-tribute.mp3"
         volume={0.4}
         autoPlay={true}
       />
