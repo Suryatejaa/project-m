@@ -1,13 +1,34 @@
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import Countdown from './Countdown';
+import BirthdayBlast from './BirthdayBlast';
 import { maheshBabuData } from '../../utils/data';
+import { BeerIcon, BetweenVerticalStartIcon, StarIcon } from 'lucide-react';
 
 const Hero = () => {
+  const [showBlast, setShowBlast] = useState(false);
+  const [blastCompleted, setBlastCompleted] = useState(false);
   const { personalInfo } = maheshBabuData;
-  const birthday = `${new Date().getFullYear()}-08-09T00:00:00`;
+
+  // Show blast immediately on component mount since it's his birthday
+  useEffect(() => {
+    console.log('Hero mounted, starting birthday blast');
+    setShowBlast(true);
+  }, []);
+
+  const handleBlastComplete = useCallback(() => {
+    console.log('Blast complete callback triggered');
+    setShowBlast(false);
+    setBlastCompleted(true);
+  }, []);
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-start text-left md:items-start md:text-left relative overflow-hidden">
+      {/* Birthday Blast Effect */}
+      <BirthdayBlast 
+        show={showBlast} 
+        onComplete={handleBlastComplete}
+      />
+      
       <div className="absolute inset-0 bg-primary opacity-50 z-10"></div>
       
       {/* Desktop Background */}
@@ -28,26 +49,46 @@ const Hero = () => {
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-4xl sm:text-5xl md:text-8xl font-extrabold font-headers text-light"
+          transition={{ duration: 1, ease: "easeOut", delay: blastCompleted ? 0 : 6 }}
+          className="text-2xl sm:text-5xl md:text-5xl font-extrabold font-headers text-light"
         >
-          The Prince Turns 50
+          {blastCompleted ? "🎉 The Prince Turns 50! 🎉" : "The Prince Turns 50"}
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+          transition={{ duration: 1, delay: blastCompleted ? 0.5 : 6.5, ease: "easeOut" }}
           className="text-xl sm:text-2xl md:text-4xl font-quotes text-secondary"
         >
-          Celebrating Mahesh Babu
+          Celebrating Superstar Mahesh Babu <StarIcon className="inline-block" />
         </motion.h2>
         
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+          transition={{ duration: 1, delay: blastCompleted ? 1 : 7, ease: "easeOut" }}
+          className="mt-0"
         >
-          <Countdown targetDate={birthday} />
+          {/* Birthday celebration message since it's already his birthday */}
+          <motion.div
+            className="text-left md:text-left"
+            animate={{ 
+              scale: [1, 1.05, 1],
+            }}
+            transition={{ 
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "reverse"
+            }}
+          >
+            <div className="text-xl md:text-5xl pl-2 font-bold text-accent">
+              IT'S HIS BIRTHDAY!💫
+            </div>
+            <div className="text-lg md:text-2xl pl-2 text-light">
+              August 9th, 2025 - Golden Jubilee Celebration!
+            </div>
+            
+          </motion.div>
         </motion.div>
       </div>
     </section>

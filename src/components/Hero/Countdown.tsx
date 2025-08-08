@@ -1,8 +1,26 @@
 import { useCountdown } from '../../hooks/useCountdown';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const Countdown = ({ targetDate }: { targetDate: string }) => {
   const [days, hours, minutes, seconds] = useCountdown(targetDate);
+  const [showBlast, setShowBlast] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(false);
+
+  // Trigger blast when countdown reaches zero
+  useEffect(() => {
+    if (days + hours + minutes + seconds <= 0 && !hasTriggered) {
+      setShowBlast(true);
+      setHasTriggered(true);
+      
+      // Auto-hide blast after 10 seconds
+      const timer = setTimeout(() => {
+        setShowBlast(false);
+      }, 10000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [days, hours, minutes, seconds, hasTriggered]);
 
   const CountdownItem = ({ value, label }: { value: number; label: string }) => (
     <motion.div 
@@ -22,7 +40,7 @@ const Countdown = ({ targetDate }: { targetDate: string }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-3xl sm:text-4xl md:text-6xl font-headers text-center text-accent"
+        className="text-3xl sm:text-4xl md:text-6xl font-headers text-left text-accent"
       >
         Happy 50th Birthday, Superstar!
       </motion.div>
