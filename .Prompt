@@ -1,0 +1,223 @@
+Create a modern, Gen Z-style scrolly-telling website for Telugu superstar Mahesh Babu's 50th birthday celebration using a pure client-side tech stack.
+
+TECH STACK REQUIREMENTS:
+- Frontend: React 18 + TypeScript for component-based architecture
+- Build Tool: Vite for ultra-fast development and building
+- Styling: Tailwind CSS with custom design system integration
+- Animation Libraries: Framer Motion (primary) + GSAP ScrollTrigger (complex scroll)
+- Additional Libraries: React Intersection Observer, React Countup, Swiper React
+- Optional: Lottie React for micro-animations, React Image Gallery
+- Deployment: Static export ready (Vercel/Netlify/GitHub Pages)
+
+PROJECT STRUCTURE:
+├── index.html
+├── package.json
+├── vite.config.ts
+├── tailwind.config.js
+├── src/
+│ ├── main.tsx
+│ ├── App.tsx
+│ ├── components/
+│ │ ├── Hero/
+│ │ ├── Timeline/
+│ │ ├── Gallery/
+│ │ └── shared/
+│ ├── hooks/
+│ ├── utils/
+│ ├── styles/
+│ │ └── globals.css
+│ └── assets/
+│ ├── images/
+│ └── fonts/
+└── dist/ (build output)
+
+DESIGN STYLE:
+- Modern, trendy Gen Z aesthetic with bold typography and vibrant colors
+- Dark mode with neon accent colors (electric blue, purple, gold)
+- Smooth scroll animations and parallax effects
+- Mobile-first responsive design
+- Glassmorphism UI elements and gradient backgrounds
+- Interactive hover effects and micro-animations
+
+TECHNICAL IMPLEMENTATION:
+- Pure client-side architecture with no backend dependencies
+- Vanilla JavaScript ES6+ modules for clean, maintainable code
+- GSAP ScrollTrigger for advanced scroll-based animations
+- CSS Custom Properties for dynamic theming
+- Intersection Observer API for performance optimization
+- Service Worker for offline capabilities
+- Progressive Web App features
+
+ONTENT SECTIONS (use ONLY data from attached .md file):
+1. Hero Section - "The Prince Turns 50" with countdown timer
+2. Early Life & Childhood - Extract childhood details from biography
+3. Family Legacy - Use family information provided in the file
+4. Career Milestones - Films and achievements from the biography data
+5. Records & Achievements - Statistics and records from the file
+6. Philanthropic Impact - Charity work details from biography
+7. Awards Gallery - Awards listed in the provided data
+8. Business Ventures - Business information from the file
+9. Personal Life - Family details from biography
+10. Current Projects - Recent/upcoming projects from the data
+11. Legacy Timeline - Career journey from the biographical information
+12. Birthday Wishes - Interactive section (generic implementation)
+
+DATA EXTRACTION INSTRUCTIONS:
+- Create a comprehensive TypeScript data structure from the .md file
+- Extract all numerical statistics for CountUp animations
+- Organize chronological information for timeline components
+- Structure family relationships for interactive family tree
+- Categorize achievements for different sections
+- Prepare film data for carousel/gallery components
+
+SPECIFIC DATA MAPPINGS (from biography file):
+- Extract exact charity donation amounts for animated counters
+- Use specific heart surgery numbers provided in the data
+- List exact number of films from the biography
+- Use career span years from the provided information
+- Extract village adoption details if mentioned
+- Use award names and years from the biographical data
+
+IMAGE SPECIFICATIONS:
+- Hero banner: 1920x1080px (16:9 ratio)
+- Portrait images: 800x1200px (2:3 ratio)
+- Landscape images: 1200x800px (3:2 ratio)
+- Square thumbnails: 600x600px (1:1 ratio)
+- Mobile banners: 750x1334px (9:16 ratio)
+- Icon/logo images: 512x512px (1:1 ratio)
+- Card images: 400x300px (4:3 ratio)
+- Format: WebP with fallback to JPG/PNG
+
+ANIMATION IMPLEMENTATION:
+- GSAP ScrollTrigger for scroll-based animations
+- CSS3 transforms and transitions for hover effects
+- CountUp.js for number animations
+- Custom easing functions for smooth motion
+- Intersection Observer for performance optimization
+- RequestAnimationFrame for 60fps animations
+
+BUILD CONFIGURATION:
+// vite.config.js
+import { defineConfig } from 'vite';
+export default defineConfig({
+build: {
+outDir: 'dist',
+minify: 'terser',
+rollupOptions: {
+output: {
+manualChunks: {
+vendor: ['gsap'],
+},
+},
+},
+},
+css: {
+preprocessorOptions: {
+scss: {
+additionalData: '@import "./src/styles/variables.scss";'
+}
+}
+}
+});
+
+text
+
+{
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.0.0",
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "framer-motion": "^10.16.0",
+    "gsap": "^3.12.2",
+    "react-intersection-observer": "^9.5.0",
+    "react-countup": "^6.4.0",
+    "swiper": "^11.0.0",
+    "lottie-react": "^2.4.0"
+  }
+}
+
+
+text
+
+COLOR SCHEME:
+- Primary: Deep navy (#0A0E27)
+- Secondary: Electric blue (#00D4FF)
+- Accent: Gold (#FFD700)
+- Text: White (#FFFFFF) and light gray (#E5E5E5)
+- Success: Green (#00FF88) for achievements
+
+TYPOGRAPHY (Google Fonts CDN):
+- Headers: Montserrat (700, 800, 900)
+- Body: Inter (400, 500, 600)
+- Numbers/Stats: Poppins (700, 800)
+- Quotes: Playfair Display (400, 700)
+
+INTERACTIVE ELEMENTS:
+- Sticky navigation with scroll progress indicator
+- GLightbox for image/video lightbox functionality
+- Swiper.js for touch-enabled carousels
+- Custom scroll-jacking for section transitions
+- Intersection Observer for lazy loading
+- Custom cursor with hover states
+
+SPECIFIC CONTENT INTEGRATIONS:
+- "₹30 crore annual charity donation" with CountUp.js animation
+- "4,500+ heart surgeries funded" with heartbeat CSS animation
+- "25 films as lead actor" with movie poster Swiper carousel
+- "45 years in cinema" timeline with GSAP ScrollTrigger
+- Village adoption stories with interactive map
+- Awards collection with CSS 3D transforms
+
+PERFORMANCE OPTIMIZATIONS:
+- Vite's automatic code splitting and tree shaking
+- WebP image format with lazy loading
+- Critical CSS inlining
+- Service Worker for caching
+- Preload key resources
+- Optimized font loading with font-display: swap
+
+DEPLOYMENT SCRIPT:
+{
+"scripts": {
+"dev": "vite",
+"build": "vite build",
+"preview": "vite preview",
+"deploy": "npm run build && netlify deploy --prod --dir=dist"
+}
+}
+
+text
+
+ACCESSIBILITY FEATURES:
+- Semantic HTML5 structure
+- ARIA labels and roles
+- Keyboard navigation support
+- Screen reader optimizations
+- Color contrast compliance (WCAG AA)
+- Reduced motion preferences support
+
+Generate clean, well-commented code using this modern tech stack that creates a blazing-fast, pure client-side website telling Mahesh Babu's inspiring story through engaging visual storytelling perfect for his milestone 50th birthday celebration. Ensure all code is production-ready with proper error handling and fallbacks.
+Key Additions Made:
+Complete tech stack specification with Vite + Vanilla JS + GSAP
+
+Project structure with proper file organization
+
+Build configuration with Vite config and package.json
+
+Specific library implementations for each feature
+
+Performance optimizations built into the stack
+
+Deployment scripts for easy hosting
+
+Development workflow with modern tooling
+
+Generate clean, well-commented code that uses ONLY the information provided in the attached Mahesh Babu biography .md file. Create proper data structures, ensure type safety, and build reusable components that consume this static biographical data effectively.
