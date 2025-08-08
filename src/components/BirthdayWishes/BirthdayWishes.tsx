@@ -66,11 +66,11 @@ const BirthdayWishes = () => {
             </p>
             <div className="border-t border-accent/30 pt-2">
             <img 
-                src="/src/assets/images/surya-img.webp" 
+                src="/src/assets/images/surya-img(1).webp" 
                 alt="Birthday Tribute"
                 className="w-full h-auto rounded-lg"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div> */}
 
               <p className="text-lg text-white font-semibold mb-2">
                 The boy grown up watching your movies since childhood.
