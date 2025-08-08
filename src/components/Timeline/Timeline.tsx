@@ -16,9 +16,9 @@ const Timeline = () => {
     { year: 1999, event: `Lead actor debut in "${career.debut.film}"` },
     { year: 2003, event: `Breakthrough with "${career.breakthrough[1].film}"` },
     { year: 2006, event: `Industry hit with "${career.definingFilms[0].film}"` },
-    { year: 2015, event: `Social impact with "${career.definingFilms[2].film}"` },
-    { year: 2019, event: `National Award for "${career.definingFilms[3].film}"` },
-    { year: 2025, event: `Upcoming project "${career.upcomingProject.title}"` },
+    { year: 2015, event: `Social impact with "${career.definingFilms[3].film}"` },
+    { year: 2019, event: `National Award for "${career.definingFilms[5].film}"` },
+    { year: 2027, event: `Upcoming project "${career.upcomingProject.title}"` },
   ];
 
   useEffect(() => {

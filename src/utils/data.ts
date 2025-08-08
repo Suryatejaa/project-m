@@ -44,8 +44,12 @@ export const maheshBabuData = {
     definingFilms: [
       { film: "Pokiri", year: 2006, image: "poster-pokiri.webp" },
       { film: "Dookudu", year: 2011, image: "poster-dookudu.webp" },
-      { film: "Businessman", year: 2019, image: "poster-businessman.webp" },
+      { film: "Businessman", year: 2012, image: "poster-businessman.webp" },
       { film: "Srimanthudu", year: 2015, image: "poster-srimanthudu.webp" },
+      { film: "Bharat Ane Nenu", year: 2018, image: "poster-bharat-anenenu.webp" },
+      { film: "Maharshi", year: 2019, image: "poster-maharshi.webp" },
+      { film: "Sarileru Neekevvaru", year: 2020, image: "poster-sarileru-neekevvaru.webp" },
+      { film: "Guntur Kaaram", year: 2024, image: "poster-guntur-kaaram.webp" }
     ],
     filmography: {
       totalLeadRoles: 28,
