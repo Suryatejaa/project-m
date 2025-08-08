@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';
@@ -83,6 +85,10 @@ const App = () => {
         <BirthdayWishes />
       </main>
       <Footer />
+      
+      {/* Vercel Analytics & Performance Monitoring */}
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 };
