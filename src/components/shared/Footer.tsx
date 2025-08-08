@@ -11,6 +11,7 @@ const Footer = () => {
           This is a fan-made project and not for commercial use. All information is based on publicly available data.
         </p>
         <p className="text-sm text-gray-500">Developed by: <a href="https://www.instagram.com/itz.me.surya/" target="_blank" rel="noopener noreferrer" className="underline">itz.me.surya</a></p>
+        <p className="text-sm text-gray-500">Twitter handle: <a href="https://x.com/Surya10081" target="_blank" rel="noopener noreferrer" className="underline">Surya10081</a></p>
         </div>
         {/* Credits Section */}
         <div className='flex flex-row gap-1 justify-center items-center text-gray-500 text-xs'>

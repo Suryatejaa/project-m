@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';
@@ -35,20 +36,27 @@ const App = () => {
     return () => clearInterval(interval);
   }, []); // Empty dependency array means this effect runs once on mount
 
-  // Dynamically set background image based on imageIndex
-  const backgroundImage = `/images/bg-${imageIndex}.webp`;
-
   return (
-    <div 
-      className="min-h-screen text-light overflow-x-hidden"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed'
-      }}
-    >
+    <div className="min-h-screen text-light overflow-x-hidden relative">
+      {/* Smooth Animated Background with Framer Motion */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={imageIndex}
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(/images/bg-${imageIndex}.webp)`,
+            zIndex: -1
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ 
+            duration: 0.6, 
+            ease: "easeInOut" 
+          }}
+        />
+      </AnimatePresence>
+
       {/* Background Audio - Plays throughout the entire website */}
       <BackgroundAudio 
         audioSrc="/audio/mahesh-tribute.mp3"
