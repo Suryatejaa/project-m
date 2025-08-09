@@ -7,12 +7,17 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: '#0A0E27',
-                secondary: '#00D4FF',
-                accent: '#FFD700',
+                primary: '#0A0A0A',
+                secondary: '#8B0000',
+                accent: '#DC143C',
                 light: '#FFFFFF',
-                gray: '#E5E5E5',
-                success: '#00FF88',
+                gray: '#B0B0B0',
+                success: '#8B0000',
+                'blood-red': '#8B0000',
+                'dark-red': '#660000',
+                'crimson': '#DC143C',
+                'black-red': '#1A0000',
+                'blood-gradient': 'linear-gradient(135deg, #8B0000 0%, #000000 100%)',
             },
             fontFamily: {
                 headers: ['Montserrat', 'sans-serif'],

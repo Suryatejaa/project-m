@@ -59,6 +59,9 @@ const App = () => {
         />
       </AnimatePresence>
 
+      {/* Red Smoke Overlay Effect */}
+      <div className="fixed inset-0 red-smoke-overlay" style={{ zIndex: -1 }}></div>
+
       {/* Background Audio - Plays throughout the entire website */}
       <BackgroundAudio 
         audioSrc="/audio/mahesh-tribute.mp3"

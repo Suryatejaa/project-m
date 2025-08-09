@@ -31,7 +31,7 @@ const Header = () => {
       }`}
     >
       <div className="w-full flex justify-between items-center px-4">
-        <div className="font-bold text-2xl font-headers text-accent">MB50</div>
+        <div className="font-extrabold text-2xl font-headers text-red-700">SSMB29</div>
         <nav className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
             <a

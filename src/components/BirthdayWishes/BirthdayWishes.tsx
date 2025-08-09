@@ -73,12 +73,12 @@ const BirthdayWishes = () => {
                 transition={{ delay: 1, duration: 0.8, type: "spring", bounce: 0.4 }}
                 className="mb-8"
               >
-                <h4 className="text-4xl md:text-6xl font-headers text-accent mb-4 leading-tight">
+                <h4 className="text-3xl md:text-6xl font-headers text-accent mb-2">
                   {/* <span className="inline-block animate-bounce">🎉</span> */}
-                  <span className="bg-gradient-to-r from-accent via-secondary to-accent bg-clip-text text-transparent font-black">
-                    Happy 50th Birthday babu
+                  <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-800 bg-clip-text text-transparent font-black">
+                    Wait chestha... Nov-2025
                   </span>
-                  <span >🥹🥹</span>
+                  {/* <span >💥💥</span> */}
                   <br />
                   {/* <span className="text-3xl md:text-5xl text-light font-bold">Superstar Babu</span> */}
                   {/* <span className="inline-block animate-bounce delay-200">🎉</span> */}
@@ -91,9 +91,9 @@ const BirthdayWishes = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 1.2, duration: 0.8 }}
-                className="text-xl md:text-2xl text-light mb-8 font-light italic leading-relaxed"
+                className="text-xl md:text-2xl text-light mb-8 font-light italic"
               >
-                "Here's to many more years of inspiring performances and making a difference in the world!"
+                "Just first look okkati reveal chesthe chaalu, inka ikkada evadi government undadhu"
               </motion.p>
 
               {/* Personal Image Section */}
@@ -156,8 +156,8 @@ const BirthdayWishes = () => {
               </motion.div>
 
               {/* Decorative Elements */}
-              <div className="absolute top-4 left-4 text-accent/30 text-6xl">🎬</div>
-              <div className="absolute bottom-4 right-4 text-secondary/30 text-4xl">⭐</div>
+              {/* <div className="absolute top-4 left-4 text-accent/30 text-6xl">🎬</div> */}
+              {/* <div className="absolute bottom-4 right-4 text-secondary/30 text-4xl">⭐</div> */}
             </div>
           </div>
         </motion.div>

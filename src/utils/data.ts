@@ -70,10 +70,78 @@ export const maheshBabuData = {
   },
   achievements: {
     awards: [
-      { name: "Nandi Awards", count: 8 },
-      { name: "Filmfare Awards for Best Actor – Telugu", count: 5 },
-      { name: "SIIMA Awards", count: 4 },
-      { name: "National Film Award for Best Popular Film", for: "Maharshi" },
+      { 
+        name: "Nandi Awards", 
+        count: 9,
+        category: "State Government Honors",
+        significance: "Holds the most Nandi Awards won by any individual actor",
+        details: [
+          { year: 1999, award: "Best Male Debut", film: "Raja Kumarudu" },
+          { year: 2002, award: "Special Jury Award", film: "Murari" },
+          { year: 2003, award: "Special Jury Award", film: "Takkari Donga" },
+          { year: 2004, award: "Best Actor", film: "Nijam" },
+          { year: 2005, award: "Special Jury Award", film: "Arjun" },
+          { year: 2006, award: "Best Actor", film: "Athadu" },
+          { year: 2011, award: "Best Actor", film: "Dookudu" },
+          { year: 2015, award: "Best Actor", film: "Srimanthudu" },
+          { year: 2015, award: "Best Popular Feature Film", film: "Srimanthudu" }
+        ]
+      },
+      { 
+        name: "Filmfare Awards for Best Actor – Telugu", 
+        count: 5,
+        category: "Industry Excellence",
+        significance: "Second highest wins in this category after Chiranjeevi",
+        details: [
+          { year: 2004, film: "Okkadu" },
+          { year: 2007, film: "Pokiri" },
+          { year: 2011, film: "Dookudu" },
+          { year: 2013, film: "Seethamma Vakitlo Sirimalle Chettu" },
+          { year: 2015, film: "Srimanthudu" }
+        ]
+      },
+      { 
+        name: "SIIMA Awards", 
+        count: 4,
+        category: "Pan-South Recognition",
+        significance: "Most nominated (8) and most awarded actor in SIIMA Best Actor - Telugu",
+        details: [
+          { year: 2012, film: "Dookudu" },
+          { year: 2014, film: "Seethamma Vakitlo Sirimalle Chettu" },
+          { year: 2016, film: "Srimanthudu" },
+          { year: 2021, film: "Maharshi" }
+        ]
+      },
+      { 
+        name: "National Film Award", 
+        category: "Government of India",
+        significance: "Highest honor in Indian cinema",
+        for: "Maharshi - Best Popular Film Providing Wholesome Entertainment",
+        year: 2021,
+        details: [
+          { year: 2021, award: "Best Popular Film Providing Wholesome Entertainment", film: "Maharshi" }
+        ]
+      },
+      {
+        name: "CineMAA Awards",
+        count: 3,
+        category: "Industry Recognition",
+        details: [
+          { year: 2003, award: "Best Actor - Male", film: "Okkadu" },
+          { year: 2011, award: "Best Actor - Male", film: "Dookudu" },
+          { year: 2015, award: "Best Actor - Male Jury", film: "1: Nenokkadine" }
+        ]
+      },
+      {
+        name: "Additional Honors",
+        category: "Special Recognition",
+        details: [
+          { year: 2016, award: "IIFA Utsavam Award - Best Actor Telugu", film: "Srimanthudu" },
+          { year: 2020, award: "Zee Cine Awards Telugu - Twitter Star" },
+          { award: "Santosham Film Awards", films: "Okkadu, Pokiri, Businessman" },
+          { award: "Forbes India Celebrity 100", note: "Featured since 2012" }
+        ]
+      }
     ],
     records: {
       television: {

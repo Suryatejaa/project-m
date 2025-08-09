@@ -1,25 +1,31 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import BirthdayBlast from './BirthdayBlast';
+import SSMB29Countdown from './SSMB29Countdown';
 import { maheshBabuData } from '../../utils/data';
-import { BeerIcon, BetweenVerticalStartIcon, StarIcon } from 'lucide-react';
+import { StarIcon, Film, Zap } from 'lucide-react';
 
 const Hero = () => {
   const [showBlast, setShowBlast] = useState(false);
-  const [blastCompleted, setBlastCompleted] = useState(false);
+  const [blastCompleted, setBlastCompleted] = useState(true); // Skip blast for now, focus on SSMB29
+  const [showSSMB29, setShowSSMB29] = useState(false);
   const { personalInfo } = maheshBabuData;
 
-  // Show blast immediately on component mount since it's his birthday
+  // Show SSMB29 announcement after a short delay
   useEffect(() => {
-    console.log('Hero mounted, starting birthday blast');
-    setShowBlast(true);
+    const timer = setTimeout(() => {
+      setShowSSMB29(true);
+    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleBlastComplete = useCallback(() => {
-    console.log('Blast complete callback triggered');
     setShowBlast(false);
     setBlastCompleted(true);
+    setShowSSMB29(true);
   }, []);
+
+  const november1st2025 = "2025-11-01T00:00:00";
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-start text-left md:items-start md:text-left relative overflow-hidden">
@@ -29,67 +35,59 @@ const Hero = () => {
         onComplete={handleBlastComplete}
       />
       
-      <div className="absolute inset-0 bg-primary opacity-50 z-10"></div>
+      <div className="absolute inset-0 bg-primary opacity-60 z-10"></div>
       
-      {/* Desktop Background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center hidden md:block" 
-        style={{backgroundImage: "url('/images/hero-background.webp')"}}
+      {/* SSMB29 Poster Background (when available) */}
+      <div
+        className="absolute inset-0 bg-cover bg-right hidden md:block"
+        style={{ backgroundImage: "url('/images/ssrmb.webp')" }}
       ></div>
 
-      {/* Mobile Background */}
+      {/* Fallback Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-left md:hidden" 
+        className="absolute inset-0 bg-cover bg-center md:hidden" 
         style={{
-          backgroundImage: "url('/images/hero-background-mobile.webp')",
-          }}
+          backgroundImage: "url('/images/ssrmb.webp')",
+        }}
       ></div>
 
-      <div className="top-40 lg:top-20 md:top-20 mt-40 lg:mt-20 md:mt-20 pt-20 flex flex-col items-start relative z-20 p-1 w-full md:w-3/5 lg:w-1/2 md:pl-1 lg:pl-2">
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: blastCompleted ? 0 : 6 }}
-          className="text-2xl sm:text-5xl md:text-5xl font-extrabold font-headers text-light"
-        >
-          {blastCompleted ? "🎉 The Prince Turns 50! 🎉" : "The Prince Turns 50"}
-        </motion.h1>
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: blastCompleted ? 0.5 : 6.5, ease: "easeOut" }}
-          className="text-xl sm:text-2xl md:text-4xl font-quotes text-secondary"
-        >
-          Celebrating Superstar Mahesh Babu <StarIcon className="inline-block" />
-        </motion.h2>
-        
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: blastCompleted ? 1 : 7, ease: "easeOut" }}
-          className="mt-0"
-        >
-          {/* Birthday celebration message since it's already his birthday */}
+      <div className="relative z-20 p-2 w-full max-w-6xl mx-auto">
+
+        {/* SSMB29 Announcement Section */}
+        {showSSMB29 && (
           <motion.div
-            className="text-left md:text-left"
-            animate={{ 
-              scale: [1, 1.05, 1],
-            }}
-            transition={{ 
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "reverse"
-            }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="md:p-2 mt-40 pt-60"
           >
-            <div className="text-xl md:text-5xl pl-2 font-bold text-accent">
-              IT'S HIS BIRTHDAY!💫
-            </div>
-            <div className="text-lg md:text-2xl pl-2 text-light">
-              August 9th, 2025 - Golden Jubilee Celebration!
-            </div>
-            
+           
+            {/* SSMB29 Poster Section */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="text-center mb-1"
+            >                        
+              <motion.h3
+                className="text-3xl md:text-5xl text-center font-bold text-white mb-1"
+                animate={{ 
+                  textShadow: [
+                    '0 0 10px rgba(210, 4, 4, 1)',
+                    '0 0 20px rgba(216, 3, 3, 1)',
+                    '0 0 10px rgba(248, 1, 1, 1)',
+                  ]
+                }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
+              >
+              NEVER-BEFORE-SEEN
+              </motion.h3>             
+            </motion.div>
+
+            {/* Countdown Component */}
+            <SSMB29Countdown targetDate={november1st2025} />
           </motion.div>
-        </motion.div>
+        )}
       </div>
     </section>
   );
